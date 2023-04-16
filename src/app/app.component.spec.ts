@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'oauth2-pkce-demo'`, () => {
+  it(`should have as title 'gyaan100-ui'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('oauth2-pkce-demo');
+    expect(app.title).toEqual('gyaan100-ui');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('oauth2-pkce-demo app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('gyaan100-ui app is running!');
   });
 });

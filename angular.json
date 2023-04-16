@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "oauth2-pkce-demo": {
+    "gyaan100-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/oauth2-pkce-demo",
+            "outputPath": "dist/gyaan100-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "oauth2-pkce-demo:build:production"
+              "browserTarget": "gyaan100-ui:build:production"
             },
             "development": {
-              "browserTarget": "oauth2-pkce-demo:build:development"
+              "browserTarget": "gyaan100-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "oauth2-pkce-demo:build"
+            "browserTarget": "gyaan100-ui:build"
           }
         },
         "test": {
