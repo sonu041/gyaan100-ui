@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KnowledgesService } from './knowledges.service';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-knowledges',

@@ -1,5 +1,10 @@
 <h1>Knowledges</h1>
-<div class="task-item" *ngFor="let knowledge of knowledges">
-    <p>{{ knowledge.title }}</p>
+<div justify="flex-end" >
+    <button mat-flat-button color="primary">Add New Knowledge</button>
 </div>
+<mat-list role="list">
+    <div class="task-item" *ngFor="let knowledge of knowledges">
+        <mat-list-item role="listitem">{{ knowledge.title }}</mat-list-item>
+    </div>
+</mat-list>
 
