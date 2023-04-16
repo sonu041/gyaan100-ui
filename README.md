@@ -1,4 +1,8 @@
-# Oauth2PkceDemo
+# Gyaan 100
+
+Developer: Shuvankar Sarkar
+
+This project is developed for UI component of Mtech project for BitsPilani WILP program.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
