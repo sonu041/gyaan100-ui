@@ -14,12 +14,12 @@ export class KnowledgesComponent implements OnInit{
   constructor(private knowledgeService: KnowledgesService) {}
 
   ngOnInit(): void {
-      this.getKnowledges();
+      this.getAllKnowledges();
   }
 
-  private getKnowledges() {
-    this.knowledgeService.getKnowledges$().subscribe(
-      response => this.knowledges = JSON.parse(response)
+  private getAllKnowledges() {
+    this.knowledgeService.getAllKnowledges().subscribe(
+      response => this.knowledges = response
     );
   }
 
