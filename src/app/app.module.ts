@@ -22,6 +22,8 @@ import { MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { KnowledgeViewComponent } from './knowledges/knowledge-view.component';
+import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AppComponent,
     KnowledgesComponent,
     AddEditKnowledgeComponent,
+    DeleteKnowledgeComponent,
+    KnowledgeViewComponent,
     DashboardComponent,
     NavbarComponent,
   ],

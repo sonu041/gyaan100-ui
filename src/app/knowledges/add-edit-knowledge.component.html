@@ -1,8 +1,8 @@
-<div class="card card-container form">
+<div class="form">
 	<h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Knowledge</h5>
 	<div class="row">
 		<form [formGroup]="form" (ngSubmit)="submitForm()" class="col s12">
-			<div class="row">
+			<div class="row form-group">
 				<div class="col s12">
 					<label for="name">Title</label> <input type="text" class="form-control" name="title" formControlName="title" />
 					<div class="alert-danger">
@@ -16,7 +16,9 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<label for="description">Description</label> <input type="text" class="form-control" name="description" formControlName="description" />
+					<label for="description">Description</label>
+					<textarea class="form-control" id="description" rows="10" name="description" formControlName="description"></textarea>
+					<!-- <input type="text" class="form-control" name="description" formControlName="description" /> -->
 					<div class="alert-danger">
 						<div *ngIf="form.controls['description'].touched && form.controls['description'].errors?.['required']">* Required</div>
 						<div *ngIf="form.controls['description'].touched && form.controls['description'].errors?.['minlength']">Minimum length is
@@ -29,7 +31,7 @@
 			<br />
 			<div class="d-flex gap-2">
 				<a href="#" routerLink="/knowledges" class="btn btn-secondary w-100">Cancel</a>
-				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Update' : 'Create'}}</button>
+				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
 			</div>
 			<!-- <div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div> -->
 		</form>

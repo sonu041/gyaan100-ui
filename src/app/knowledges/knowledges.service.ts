@@ -20,22 +20,22 @@ export class KnowledgesService {
 	}
 
   create(knowledge:any): Observable<any> {
-    console.log('inside service create');
+    // console.log('inside service create');
     this.httpClient.get(KnowledgesService.KNOWLEDGE_ENDPOINT);
 		return this.httpClient.post(KnowledgesService.KNOWLEDGE_ENDPOINT, JSON.stringify(knowledge), AppConstants.httpOptions)
-	}  
+	}
+
+  find(id:number): Observable<any> {
+		return this.httpClient.get<Knowledge>(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id)
+	}
      
-	// find(id:number): Observable<any> {
-	// 	return this.httpClient.get<Product>(AppConstants.API_URL + 'products/' + id)
-	// }
+	update(id:number, knowledge:Knowledge): Observable<any> {
+		return this.httpClient.put(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id, JSON.stringify(knowledge), AppConstants.httpOptions)
+	}
      
-	// update(id:number, product:Product): Observable<any> {
-	// 	return this.httpClient.put(AppConstants.API_URL + 'products/' + id, JSON.stringify(product), AppConstants.httpOptions)
-	// }
-     
-	// delete(id:number){
-	// 	return this.httpClient.delete(AppConstants.API_URL + 'products/' + id)
-	// }
+	delete(id:number){
+		return this.httpClient.delete(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id)
+	}
 
   // getKnowledges$(): Observable<any> {
   //   // const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
