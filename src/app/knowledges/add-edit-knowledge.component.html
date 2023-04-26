@@ -30,7 +30,7 @@
 			</div>
 			<br />
 			<div class="d-flex gap-2">
-				<a href="#" routerLink="/knowledges" class="btn btn-secondary w-100">Cancel</a>
+				<a href="#" [routerLink]="id ? ['/knowledges/view/1'] :  ['/knowledges/']" class="btn btn-secondary w-100">Cancel</a>
 				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
 			</div>
 			<!-- <div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div> -->
@@ -38,5 +38,25 @@
 	</div>
 </div>
 
+
+
+<!-- Create the editor container -->
+<!-- <div id="editor">
+  <p>Hello World!</p>
+  <p>Some initial <strong>bold</strong> text</p>
+  <p><br></p>
+</div> -->
+<!-- 
+<quill-editor placeholder="Enter Text" [modules]="config"
+                    formControlName="yourCtrlname" >
+                </quill-editor> -->
+
+
+<!-- Initialize Quill editor -->
+<!-- <script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script> -->
   
   

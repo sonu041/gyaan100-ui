@@ -24,7 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KnowledgeViewComponent } from './knowledges/knowledge-view.component';
 import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.component';
-
+import { ServersComponent } from './servers/servers.component';
+import { ServerViewComponent } from './servers/server-view.component';
+import { AddEditServerComponent } from './servers/add-edit-server.component';
+// import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.componen
     KnowledgeViewComponent,
     DashboardComponent,
     NavbarComponent,
+    ServersComponent,
+    ServerViewComponent,
+    AddEditServerComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,8 @@ import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.componen
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    // QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

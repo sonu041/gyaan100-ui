@@ -8,33 +8,29 @@ import { Knowledge } from './knowledge';
   providedIn: 'root'
 })
 export class KnowledgesService {
-  private static KNOWLEDGE_ENDPOINT = AppConstants.API_URL+'/knowledge';
-  private static headers = AppConstants.httpOptions;
-  // new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
 
   constructor( private httpClient: HttpClient ) { }
-
   
   getAllKnowledges(): Observable<any> {
-		return this.httpClient.get(KnowledgesService.KNOWLEDGE_ENDPOINT);
+		return this.httpClient.get(AppConstants.KNOWLEDGE_ENDPOINT);
 	}
 
   create(knowledge:any): Observable<any> {
     // console.log('inside service create');
-    this.httpClient.get(KnowledgesService.KNOWLEDGE_ENDPOINT);
-		return this.httpClient.post(KnowledgesService.KNOWLEDGE_ENDPOINT, JSON.stringify(knowledge), AppConstants.httpOptions)
+    this.httpClient.get(AppConstants.KNOWLEDGE_ENDPOINT);
+		return this.httpClient.post(AppConstants.KNOWLEDGE_ENDPOINT, JSON.stringify(knowledge), AppConstants.httpOptions)
 	}
 
   find(id:number): Observable<any> {
-		return this.httpClient.get<Knowledge>(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id)
+		return this.httpClient.get<Knowledge>(AppConstants.KNOWLEDGE_ENDPOINT + '/' + id)
 	}
      
 	update(id:number, knowledge:Knowledge): Observable<any> {
-		return this.httpClient.put(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id, JSON.stringify(knowledge), AppConstants.httpOptions)
+		return this.httpClient.put(AppConstants.KNOWLEDGE_ENDPOINT + '/' + id, JSON.stringify(knowledge), AppConstants.httpOptions)
 	}
      
 	delete(id:number){
-		return this.httpClient.delete(KnowledgesService.KNOWLEDGE_ENDPOINT + '/' + id)
+		return this.httpClient.delete(AppConstants.KNOWLEDGE_ENDPOINT + '/' + id)
 	}
 
   // getKnowledges$(): Observable<any> {

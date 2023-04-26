@@ -1,0 +1,37 @@
+<div class="form">
+	<!-- <h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Knowledge</h5> -->
+    <!-- <a href="#" routerLink="/knowledges/edit/{{knowledge.id}}" class="btn btn-secondary w-100">Edit</a> -->
+    <a href="#" routerLink="/servers" class="btn btn-secondary w-95">Back</a>&nbsp;
+    <a href="#" [routerLink]="['/servers/edit', server?.id]" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>&nbsp;
+    <a href="#" [routerLink]="['/servers/delete', server?.id]" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+	<div class="row">
+			<div class="row form-group">
+				<div class="col s12">
+					<div class="h2">
+						<div>
+                            {{ server?.name }}
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<div class="" style="white-space: pre-line">
+						<div>Hostname: {{ server?.hostname }}</div>
+					</div>
+					<div class="" style="white-space: pre-line">
+						<div>IP: {{ server?.ip }}</div>
+					</div>
+					<div class="" style="white-space: pre-line">
+						<div>Type: {{ server?.type }}</div>
+					</div>
+					<div class="" style="white-space: pre-line">
+						<div>Operating System: {{ server?.os }}</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+  
+  

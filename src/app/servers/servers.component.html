@@ -1,0 +1,26 @@
+<h1>Servers </h1>
+<div justify="flex-end" >
+    <button mat-flat-button color="primary" routerLink="/servers/add">Add New Server</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Server Name</th>
+        <th scope="col">Hostname</th>
+        <th scope="col">IP</th>
+        <th scope="col">Type</th>
+        <th scope="col">OS</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let server of servers">
+        <td><a href="#" [routerLink]="['/servers/view', server.id]" class="text-decoration-none">{{ server.name }}</a></td>
+        <td>{{ server.hostname }}</td>
+        <td>{{ server.ip }}</td>
+        <td>{{ server.type }}</td>
+        <td>{{ server.os }}</td>
+      </tr>
+    </tbody>
+  </table>
