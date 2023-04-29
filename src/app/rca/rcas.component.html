@@ -1,0 +1,18 @@
+<h1>Rcas </h1>
+<div justify="flex-end" >
+    <button mat-flat-button color="primary" routerLink="/rca/add">Add New RCA</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let rca of rcas">
+        <td><a href="#" [routerLink]="['/rca/view', rca.id]" class="text-decoration-none">{{ rca.title }}</a></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,20 @@
+<h1>Templates </h1>
+<div justify="flex-end" >
+    <button mat-flat-button color="primary" routerLink="/templates/add">Add New Template</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let template of templates">
+        <td><a href="#" [routerLink]="['/templates/view', template.id]" class="text-decoration-none">{{ template.title }}</a></td>
+        <td>{{ template.description }}</td>
+      </tr>
+    </tbody>
+  </table>

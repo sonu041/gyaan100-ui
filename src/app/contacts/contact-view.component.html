@@ -1,0 +1,32 @@
+<div class="form">
+    <a href="#" routerLink="/contacts" class="btn btn-secondary w-95">Back</a>&nbsp;
+    <a href="#" [routerLink]="['/contacts/edit', contact?.id]" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>&nbsp;
+    <a href="#" [routerLink]="['/contacts/delete', contact?.id]" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+	<div class="row">
+			<div class="row form-group">
+				<div class="col s12">
+					<div class="h2">
+						<div>
+                            {{ contact?.name }}
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<div class="" style="white-space: pre-line">
+						<div>Email: {{ contact?.email }}</div>
+					</div>
+					<div class="" style="white-space: pre-line">
+						<div>Phone: {{ contact?.phone }}</div>
+					</div>
+					<div class="" style="white-space: pre-line">
+						<div>Team: {{ contact?.team }}</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+  
+  

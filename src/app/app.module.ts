@@ -27,6 +27,18 @@ import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.componen
 import { ServersComponent } from './servers/servers.component';
 import { ServerViewComponent } from './servers/server-view.component';
 import { AddEditServerComponent } from './servers/add-edit-server.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ContactViewComponent } from './contacts/contact-view.component';
+import { ContactAddEditComponent } from './contacts/contact-add-edit.component';
+import { ContactDeleteComponent } from './contacts/contact-delete.component';
+import { RcasComponent } from './rca/rcas.component';
+import { RcaAddEditComponent } from './rca/rca-add-edit.component';
+import { RcaViewComponent } from './rca/rca-view.component';
+import { RcaDeleteComponent } from './rca/rca-delete.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { TemplateAddEditComponent } from './templates/template-add-edit.component';
+import { TemplateViewComponent } from './templates/template-view.component';
+import { TemplateDeleteComponent } from './templates/template-delete.component';
 // import { QuillModule } from 'ngx-quill';
 
 @NgModule({
@@ -40,7 +52,19 @@ import { AddEditServerComponent } from './servers/add-edit-server.component';
     NavbarComponent,
     ServersComponent,
     ServerViewComponent,
-    AddEditServerComponent
+    AddEditServerComponent,
+    ContactsComponent,
+    ContactViewComponent,
+    ContactAddEditComponent,
+    ContactDeleteComponent,
+    TemplatesComponent,
+    TemplateAddEditComponent,
+    TemplateViewComponent,
+    TemplateDeleteComponent,
+    RcasComponent,
+    RcaAddEditComponent,
+    RcaViewComponent,
+    RcaDeleteComponent
   ],
   imports: [
     BrowserModule,
