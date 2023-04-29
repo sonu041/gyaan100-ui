@@ -44,6 +44,7 @@ export class NavbarComponent {
   }
 
   logout() {
+    console.log('Inside navbar logout.');
     this.oauthService.logOut();
   }
 

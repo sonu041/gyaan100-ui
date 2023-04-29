@@ -3,6 +3,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { Subscription } from 'rxjs';
 import { AppService } from './app.service';
 import { authConfig } from './auth.config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit{
   title = 'gyaan100-ui';
   text = '';
 
-  constructor(private oauthService: OAuthService, private appService: AppService) {
+  constructor(private oauthService: OAuthService, private appService: AppService, private router: Router) {
     
     // this.appService.hello().subscribe(response => {
     //   this.text = response;
@@ -22,9 +23,10 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     if(!this.oauthService.hasValidAccessToken()) {
       this.configure();
+    } else {
+      this.router.navigateByUrl('dashboard');
     }
-  }
-  
+  }  
 
   private configure() {
     this.oauthService.configure(authConfig);
@@ -36,6 +38,7 @@ export class AppComponent implements OnInit{
   }
 
   logout() {
+    console.log('logout initiated...')
     this.oauthService.logOut();
   }
 }
