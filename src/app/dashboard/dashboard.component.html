@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-pink kms-card">
+            <div [routerLink]="['/knowledges/']" class="card bg-c-pink kms-card">
                 <div class="card-block">
                     <p class="m-b-0">Count of Knowledges</p>
                     <h2 class="text-right"><i class="fa fa-book f-right"></i></h2>
@@ -9,9 +9,9 @@
                 </div>
             </div>
         </div>
-        
+           
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-green kms-card">
+            <div [routerLink]="['/servers/']" class="card bg-c-green kms-card">
                 <div class="card-block">
                     <p class="m-b-0">Count of Servers</p>
                     <h2 class="text-right"><i class="fa fa-server f-right"></i></h2>
@@ -21,7 +21,7 @@
         </div>
         
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow kms-card">
+            <div [routerLink]="['/contacts/']" class="card bg-c-yellow kms-card">
                 <div class="card-block">
                     <p class="m-b-0">Count of Contacts</p>
                     <h2 class="text-right"><i class="fa fa-address-book f-right"></i></h2>
@@ -31,7 +31,7 @@
         </div>
         
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-blue kms-card">
+            <div [routerLink]="['/rca/']" class="card bg-c-blue kms-card">
                 <div class="card-block">
                     <p class="m-b-0">Count of RCA</p>
                     <h2 class="text-right"><i class="fa fa-bug f-right"></i></h2>
