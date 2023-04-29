@@ -23,6 +23,10 @@ body{
     background: linear-gradient(45deg,#FF5370,#ff869a);
 }
 
+.bg-c-lightblue {
+    background: #d6f7f9;
+}
+
 
 .card {
     border-radius: 5px;

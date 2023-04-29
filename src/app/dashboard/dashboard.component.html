@@ -42,3 +42,45 @@
 	</div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-xl-6">
+            <div class="card bg-c-lightblue">
+                <div class="card-block">
+                    <a href="#" [routerLink]="['/knowledges/']" class="m-b-0 f-right">View All</a>
+                    <p class="m-b-0">Top 5 Knowledges</p>
+                    <div class="list-group" *ngFor="let knowledge of topKnowledges.slice(0, 5);">
+                        <a href="#" [routerLink]="['/knowledges/view', knowledge.id]" class="list-group-item list-group-item-action flex-column align-items-start">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h2>{{ knowledge.title }}</h2>
+                            <small>3 days ago</small>
+                          </div>
+                          <p class="mb-1"></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+           
+        <div class="col-md-4 col-xl-6">
+            <div class="card bg-c-lightblue">
+                <div class="card-block">
+                    <a href="#" [routerLink]="['/rca/']" class="m-b-0 f-right">View All</a>
+                    <p class="m-b-0">Top 5 RCA</p>
+                    <div class="list-group" *ngFor="let rca of topRCAs.slice(0, 5);">
+                        <a href="#" [routerLink]="['/rca/view', rca.id]" class="list-group-item list-group-item-action flex-column align-items-start">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h2>{{ rca.title }}</h2>
+                            <small>3 days ago</small>
+                          </div>
+                          <p class="mb-1"></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+	</div>
+</div>
+

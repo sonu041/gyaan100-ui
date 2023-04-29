@@ -12,11 +12,15 @@ export class DashboardComponent implements OnInit {
   countServer:any = []
   countContact:any = []
   countRCA:any = []
+  topKnowledges: any = []
+  topRCAs: any = []
 
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
     this.getAllCount();
+    this.getTopData();
+
   }
 
   private getAllCount() {
@@ -36,5 +40,15 @@ export class DashboardComponent implements OnInit {
       response => this.countRCA = response
     );
 
+  }
+
+  private getTopData() {
+    this.dashboardService.getTopKnowledges().subscribe(
+      response => this.topKnowledges = response
+    );
+
+    this.dashboardService.getTopRCAs().subscribe(
+      response => this.topRCAs = response
+    );
   }
 }

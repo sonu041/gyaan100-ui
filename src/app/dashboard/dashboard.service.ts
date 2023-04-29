@@ -25,4 +25,12 @@ export class DashboardService {
 	getRCACount(): Observable<any> {
 		return this.httpClient.get(AppConstants.RCA_ENDPOINT+ '/count');
 	}
+
+	getTopKnowledges(): Observable<any> {
+		return this.httpClient.get(AppConstants.KNOWLEDGE_ENDPOINT);
+	}
+
+	getTopRCAs(): Observable<any> {
+		return this.httpClient.get(AppConstants.RCA_ENDPOINT);
+	}
 }
