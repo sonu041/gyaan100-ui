@@ -4,7 +4,7 @@
     <a href="#" [routerLink]="['/contacts/delete', contact?.id]" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 	<div class="row">
 			<div class="row form-group">
-				<div class="col s12">
+				<div class="col s12 d-flex justify-content-center">
 					<div class="h2">
 						<div>
                             {{ contact?.name }}
@@ -12,19 +12,20 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<div class="" style="white-space: pre-line">
-						<div>Email: {{ contact?.email }}</div>
-					</div>
-					<div class="" style="white-space: pre-line">
-						<div>Phone: {{ contact?.phone }}</div>
-					</div>
-					<div class="" style="white-space: pre-line">
-						<div>Team: {{ contact?.team }}</div>
-					</div>
-				</div>
+			<div class="row justify-content-center p-3">
+				<div class="col-md-2 s-align f-size-20">Email:</div>
+				<div class="col-md-4 f-size-20">{{ contact?.email }}</div>
 			</div>
+			<div class="row justify-content-center p-3">
+				<div class="col-md-2 s-align f-size-20">Phone:</div>
+				<div class="col-md-4 f-size-20">{{ contact?.phone }}</div>
+			</div>
+			<div class="row justify-content-center p-3">
+				<div class="col-md-2 s-align f-size-20">Team:</div>
+				<div class="col-md-4 f-size-20">{{ contact?.team }}</div>
+				 
+			</div>
+			
 	</div>
 </div>
 

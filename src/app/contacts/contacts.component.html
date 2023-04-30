@@ -6,7 +6,6 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
@@ -17,7 +16,6 @@
 
       <tr *ngFor="let contact of contacts">
         <td><a href="#" [routerLink]="['/contacts/view', contact.id]" class="text-decoration-none">{{ contact.name }}</a></td>
-        <td>{{ contact.name }}</td>
         <td>{{ contact.email }}</td>
         <td>{{ contact.phone }}</td>
         <td>{{ contact.team }}</td>
