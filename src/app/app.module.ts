@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -39,6 +39,8 @@ import { TemplatesComponent } from './templates/templates.component';
 import { TemplateAddEditComponent } from './templates/template-add-edit.component';
 import { TemplateViewComponent } from './templates/template-view.component';
 import { TemplateDeleteComponent } from './templates/template-delete.component';
+import { ErrorInterceptor } from './shared/error.interceptor';
+import { LogoutComponent } from './logout/logout.component';
 // import { QuillModule } from 'ngx-quill';
 
 @NgModule({
@@ -64,7 +66,8 @@ import { TemplateDeleteComponent } from './templates/template-delete.component';
     RcasComponent,
     RcaAddEditComponent,
     RcaViewComponent,
-    RcaDeleteComponent
+    RcaDeleteComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,11 @@ import { TemplateDeleteComponent } from './templates/template-delete.component';
     MatSnackBarModule,
     // QuillModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

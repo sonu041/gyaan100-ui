@@ -21,9 +21,11 @@ import { TemplatesComponent } from './templates/templates.component';
 import { TemplateAddEditComponent } from './templates/template-add-edit.component';
 import { TemplateViewComponent } from './templates/template-view.component';
 import { TemplateDeleteComponent } from './templates/template-delete.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'knowledges', component: KnowledgesComponent },
   { path: 'knowledges/add', component: AddEditKnowledgeComponent },
