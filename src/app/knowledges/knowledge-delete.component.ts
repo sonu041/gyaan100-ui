@@ -5,19 +5,20 @@ import { catchError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { KnowledgesService } from './knowledges.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Knowledge } from './knowledge';
 
 
 @Component({
-    selector: 'app-add-edit-knowledge',
-    templateUrl: './add-edit-knowledge.component.html',
+    selector: 'app-knowledge-delete',
+    templateUrl: './knowledge-delete.component.html',
     styleUrls: ['./knowledges.component.css']
   })
 
-export class AddEditKnowledgeComponent implements OnInit{
+export class KnowledgeDeleteComponent implements OnInit{
 
   id: any;
   form: FormGroup;
-  knowledges:any = [];
+  knowledge!:Knowledge;
   // durationInSeconds = 5;
 
   constructor(
@@ -43,23 +44,21 @@ export class AddEditKnowledgeComponent implements OnInit{
   }
   ngOnInit() { 
     this.id = this.route.snapshot.paramMap.get('id');
-		console.log(this.id);
-		if(this.id){
-			this.knowledgeService.find(this.id).subscribe(x => this.form.patchValue(x));
-		}
+    console.log(this.id);
+    this.knowledgeService.find(this.id).subscribe((data: Knowledge)=>{
+      this.knowledge = data;
+  });
   }
   
   /** Submit the Knowledge Create Form */
-  submitForm() {
-    console.log('inside submit form');
-    var res = this.id 
-      ? this.knowledgeService.update(this.id, this.form.value) 
-      : this.knowledgeService.create(this.form.value);
-		
+  confirmDelete() {
+    console.log('inside delete form');
+
+    var res = this.knowledgeService.delete(this.id);
     res.subscribe(
       () => {
-        console.log('Knowledge created / updated successfully!');
-        this.openSnackBar('Knowledge Saved', 'close');
+        console.log('Knowledge deleted successfully!');
+        this.openSnackBar('Knowledge deleted', 'close');
 			  this.router.navigateByUrl('knowledges');
       }
     );
@@ -67,7 +66,7 @@ export class AddEditKnowledgeComponent implements OnInit{
 
   /** Show Toast Message */
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {duration: 3000}) ;
+    this._snackBar.open(message, action);
   }
 
 }

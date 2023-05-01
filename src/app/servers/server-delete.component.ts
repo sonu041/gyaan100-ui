@@ -5,20 +5,19 @@ import { catchError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServersService } from './servers.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Server } from './server';
 
 @Component({
-    selector: 'app-add-edit-server',
-    templateUrl: './add-edit-server.component.html',
+    selector: 'app-server-delete',
+    templateUrl: './server-delete.component.html',
     styleUrls: ['./servers.component.css']
   })
 
-export class AddEditServerComponent implements OnInit{
-
+export class ServerDeleteComponent implements OnInit{
   id: any;
   form: FormGroup;
   servers:any = [];
-  // durationInSeconds = 5;
+  server!: Server;
 
   constructor(
     public fb: FormBuilder,
@@ -29,31 +28,32 @@ export class AddEditServerComponent implements OnInit{
     private _snackBar: MatSnackBar
   ) {
     this.form = this.fb.group({
-      name: ['', [ Validators.required ] ],
-      hostname: ['', [ Validators.required ] ],
-      ip: ['', [ ] ],
-      type: ['', [ ] ],
-      os: ['', [ ] ],
+      title: ['', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(100),
+      ] ],
+      description: ['', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(4000),
+      ] ]
     })
   }
   ngOnInit() { 
     this.id = this.route.snapshot.paramMap.get('id');
-		console.log(this.id);
-		if(this.id){
-			this.serverService.find(this.id).subscribe(x => this.form.patchValue(x));
-		}
+    console.log(this.id);
+    this.serverService.find(this.id).subscribe((data: Server)=>{
+      this.server = data;
+    });
   }
   
   /** Submit the Knowledge Create Form */
-  submitForm() {
-    console.log('inside submit form');
-    var res = this.id 
-      ? this.serverService.update(this.id, this.form.value) 
-      : this.serverService.create(this.form.value);
-		
+  confirmDelete() {
+    var res = this.serverService.delete(this.id);
     res.subscribe(
       () => {
-        this.openSnackBar('Server Saved', 'close');
+        this.openSnackBar('Server deleted', 'close');
 			  this.router.navigateByUrl('servers');
       }
     );
@@ -61,7 +61,7 @@ export class AddEditServerComponent implements OnInit{
 
   /** Show Toast Message */
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {duration: 3000}) ;
+    this._snackBar.open(message, action, {duration: 3000});
   }
 
 }

@@ -17,16 +17,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select'
-import { AddEditKnowledgeComponent } from './knowledges/add-edit-knowledge.component';
+import { KnowledgeAddEditComponent } from './knowledges/knowledge-add-edit.component';
 import { MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KnowledgeViewComponent } from './knowledges/knowledge-view.component';
-import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.component';
+import { KnowledgeDeleteComponent } from './knowledges/knowledge-delete.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerViewComponent } from './servers/server-view.component';
-import { AddEditServerComponent } from './servers/add-edit-server.component';
+import { ServerAddEditComponent } from './servers/server-add-edit.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactViewComponent } from './contacts/contact-view.component';
 import { ContactAddEditComponent } from './contacts/contact-add-edit.component';
@@ -41,22 +41,22 @@ import { TemplateViewComponent } from './templates/template-view.component';
 import { TemplateDeleteComponent } from './templates/template-delete.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
 import { LogoutComponent } from './logout/logout.component';
-import { DeleteServerComponent } from './servers/delete-server.component';
+import { ServerDeleteComponent } from './servers/server-delete.component';
 // import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
     AppComponent,
     KnowledgesComponent,
-    AddEditKnowledgeComponent,
-    DeleteKnowledgeComponent,
+    KnowledgeAddEditComponent,
+    KnowledgeDeleteComponent,
     KnowledgeViewComponent,
     DashboardComponent,
     NavbarComponent,
     ServersComponent,
     ServerViewComponent,
-    AddEditServerComponent,
-    DeleteServerComponent,
+    ServerAddEditComponent,
+    ServerDeleteComponent,
     ContactsComponent,
     ContactViewComponent,
     ContactAddEditComponent,

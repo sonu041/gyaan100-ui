@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { KnowledgesComponent } from './knowledges/knowledges.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddEditKnowledgeComponent } from './knowledges/add-edit-knowledge.component';
+import { KnowledgeAddEditComponent } from './knowledges/knowledge-add-edit.component';
 import { KnowledgeViewComponent } from './knowledges/knowledge-view.component';
-import { DeleteKnowledgeComponent } from './knowledges/delete-knowledge.component';
+import { KnowledgeDeleteComponent } from './knowledges/knowledge-delete.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerViewComponent } from './servers/server-view.component';
-import { AddEditServerComponent } from './servers/add-edit-server.component';
-import { DeleteServerComponent } from './servers/delete-server.component';
+import { ServerAddEditComponent } from './servers/server-add-edit.component';
+import { ServerDeleteComponent } from './servers/server-delete.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactAddEditComponent } from './contacts/contact-add-edit.component';
 import { ContactViewComponent } from './contacts/contact-view.component';
@@ -28,15 +28,15 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'knowledges', component: KnowledgesComponent },
-  { path: 'knowledges/add', component: AddEditKnowledgeComponent },
+  { path: 'knowledges/add', component: KnowledgeAddEditComponent },
   { path: 'knowledges/view/:id', component: KnowledgeViewComponent },
-  { path: 'knowledges/edit/:id', component: AddEditKnowledgeComponent },
-  { path: 'knowledges/delete/:id', component: DeleteKnowledgeComponent },
+  { path: 'knowledges/edit/:id', component: KnowledgeAddEditComponent },
+  { path: 'knowledges/delete/:id', component: KnowledgeDeleteComponent },
   { path: 'servers', component: ServersComponent },
-  { path: 'servers/add', component: AddEditServerComponent },
+  { path: 'servers/add', component: ServerAddEditComponent },
   { path: 'servers/view/:id', component: ServerViewComponent },
-  { path: 'servers/edit/:id', component: AddEditServerComponent },
-  { path: 'servers/delete/:id', component: DeleteServerComponent },
+  { path: 'servers/edit/:id', component: ServerAddEditComponent },
+  { path: 'servers/delete/:id', component: ServerDeleteComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'contacts/add', component: ContactAddEditComponent },
   { path: 'contacts/view/:id', component: ContactViewComponent },

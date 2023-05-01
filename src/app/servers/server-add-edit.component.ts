@@ -5,19 +5,20 @@ import { catchError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServersService } from './servers.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Server } from './server';
+
 
 @Component({
-    selector: 'app-delete-server',
-    templateUrl: './delete-server.component.html',
+    selector: 'app-server-add-edit',
+    templateUrl: './server-add-edit.component.html',
     styleUrls: ['./servers.component.css']
   })
 
-export class DeleteServerComponent implements OnInit{
+export class ServerAddEditComponent implements OnInit{
+
   id: any;
   form: FormGroup;
   servers:any = [];
-  server!: Server;
+  // durationInSeconds = 5;
 
   constructor(
     public fb: FormBuilder,
@@ -28,32 +29,31 @@ export class DeleteServerComponent implements OnInit{
     private _snackBar: MatSnackBar
   ) {
     this.form = this.fb.group({
-      title: ['', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(100),
-      ] ],
-      description: ['', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(4000),
-      ] ]
+      name: ['', [ Validators.required ] ],
+      hostname: ['', [ Validators.required ] ],
+      ip: ['', [ ] ],
+      type: ['', [ ] ],
+      os: ['', [ ] ],
     })
   }
   ngOnInit() { 
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
-    this.serverService.find(this.id).subscribe((data: Server)=>{
-      this.server = data;
-    });
+		console.log(this.id);
+		if(this.id){
+			this.serverService.find(this.id).subscribe(x => this.form.patchValue(x));
+		}
   }
   
   /** Submit the Knowledge Create Form */
-  confirmDelete() {
-    var res = this.serverService.delete(this.id);
+  submitForm() {
+    console.log('inside submit form');
+    var res = this.id 
+      ? this.serverService.update(this.id, this.form.value) 
+      : this.serverService.create(this.form.value);
+		
     res.subscribe(
       () => {
-        this.openSnackBar('Server deleted', 'close');
+        this.openSnackBar('Server Saved', 'close');
 			  this.router.navigateByUrl('servers');
       }
     );
@@ -61,7 +61,7 @@ export class DeleteServerComponent implements OnInit{
 
   /** Show Toast Message */
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {duration: 3000});
+    this._snackBar.open(message, action, {duration: 3000}) ;
   }
 
 }
