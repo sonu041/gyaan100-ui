@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { delay, filter } from 'rxjs/operators';
@@ -12,13 +12,18 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent  implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+  currentUser: any;
 
   constructor(private oauthService: OAuthService,
     private observer: BreakpointObserver,
     private router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.currentUser = localStorage.getItem('userName');
   }
 
   ngAfterViewInit() {

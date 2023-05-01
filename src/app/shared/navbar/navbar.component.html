@@ -17,7 +17,7 @@
       src="assets/knowledge.jpg"
     />
 
-    <h4 class="name">shuvankar</h4>
+    <h4 class="name">{{currentUser}}</h4>
 
     <mat-divider></mat-divider>
 
@@ -49,8 +49,7 @@
 
     <mat-divider></mat-divider>
 
-    
-    <a (click)="logout()">Logout</a>
+    <a href="#" [routerLink]="['/logout']">Logout</a>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
