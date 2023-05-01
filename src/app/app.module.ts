@@ -39,7 +39,6 @@ import { TemplatesComponent } from './templates/templates.component';
 import { TemplateAddEditComponent } from './templates/template-add-edit.component';
 import { TemplateViewComponent } from './templates/template-view.component';
 import { TemplateDeleteComponent } from './templates/template-delete.component';
-import { ErrorInterceptor } from './shared/error.interceptor';
 import { LogoutComponent } from './logout/logout.component';
 import { ServerDeleteComponent } from './servers/server-delete.component';
 // import { QuillModule } from 'ngx-quill';
@@ -96,10 +95,7 @@ import { ServerDeleteComponent } from './servers/server-delete.component';
     MatSnackBarModule,
     // QuillModule.forRoot()
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
-    }
+  providers: [    
   ],
   bootstrap: [AppComponent]
 })
