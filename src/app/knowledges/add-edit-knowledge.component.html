@@ -1,5 +1,5 @@
 <div class="form">
-	<h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Knowledge</h5>
+	<div class="text-center f-size-20">{{ id ? 'Edit' : 'Add'}} Knowledge</div>
 	<div class="row">
 		<form [formGroup]="form" (ngSubmit)="submitForm()" class="col s12">
 			<div class="row form-group">
@@ -28,9 +28,10 @@
 					</div>
 				</div>
 			</div>
+			<!-- <input type="text" class="form-control" name="author" formControlName="author" value={{currentUser}}/> -->
 			<br />
 			<div class="d-flex gap-2">
-				<a href="#" [routerLink]="id ? ['/knowledges/view/1'] :  ['/knowledges/']" class="btn btn-secondary w-100">Cancel</a>
+				<a href="#" [routerLink]="id ? ['/knowledges/view/'+id] :  ['/knowledges/']" class="btn btn-secondary w-100">Cancel</a>
 				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
 			</div>
 			<!-- <div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div> -->

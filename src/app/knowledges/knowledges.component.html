@@ -2,14 +2,31 @@
 <div justify="flex-end" >
     <button mat-flat-button color="primary" routerLink="/knowledges/add">Add New Knowledge</button>
 </div>
+<br><br>
+
+<div class="row">
+    <div >
+        <div class="card bg-c-lightblue">
+            <div class="card-block">
+                <div class="list-group" *ngFor="let knowledge of knowledges">
+                    <a href="#" [routerLink]="['/knowledges/view', knowledge.id]" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h2>{{ knowledge.title }}</h2>
+                        <small>{{knowledge.created_date}}</small>
+                      </div>
+                      <p class="mb-1"></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
 <mat-list role="list">
     <div class="task-item" *ngFor="let knowledge of knowledges">
         <mat-list-item role="listitem">
-            <!-- <a href="#" [routerLink]="['/knowledges/view', knowledge.id]" class="btn btn-primary m-1">Edit</a> -->
             <a href="#" [routerLink]="['/knowledges/view', knowledge.id]" class="text-decoration-none">{{ knowledge.title }}</a>
-
-            
         </mat-list-item>
     </div>
-</mat-list>
-
+</mat-list> -->

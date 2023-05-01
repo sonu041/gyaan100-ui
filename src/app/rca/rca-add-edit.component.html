@@ -1,5 +1,5 @@
 <div class="form">
-	<h5 class="text-center">{{ id ? 'Edit' : 'Add'}} RCA</h5>
+	<div class="text-center f-size-20 p-3">{{ id ? 'Edit' : 'Add'}} RCA</div>
 	<div class="row">
 		<form [formGroup]="form" (ngSubmit)="submitForm()" class="col s12">
 			<div class="row form-group">
@@ -19,10 +19,12 @@
 			</div>
 			
 			<br />
-			<div class="d-flex gap-2">
-				<a href="#" [routerLink]="id ? ['/rca/view/'+id] :  ['/rca/']" class="btn btn-secondary w-100">Cancel</a>
-				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
+
+			<div class="row mb-3 d-flex justify-content-center gap-2">
+				<a href="#" [routerLink]="id ? ['/rca/view/'+id] :  ['/rca/']" class="btn btn-secondary col-md-2">Cancel</a>
+				<button class="btn btn-primary col-md-2" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
 			</div>
+			
 			<!-- <div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div> -->
 		</form>
 	</div>

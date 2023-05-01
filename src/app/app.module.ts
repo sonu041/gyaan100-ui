@@ -41,6 +41,7 @@ import { TemplateViewComponent } from './templates/template-view.component';
 import { TemplateDeleteComponent } from './templates/template-delete.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
 import { LogoutComponent } from './logout/logout.component';
+import { DeleteServerComponent } from './servers/delete-server.component';
 // import { QuillModule } from 'ngx-quill';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { LogoutComponent } from './logout/logout.component';
     ServersComponent,
     ServerViewComponent,
     AddEditServerComponent,
+    DeleteServerComponent,
     ContactsComponent,
     ContactViewComponent,
     ContactAddEditComponent,

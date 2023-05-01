@@ -1,49 +1,48 @@
 <div class="form">
-	<h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Server</h5>
-	<div class="row">
+	<div class="text-center f-size-20 p-3">{{ id ? 'Edit' : 'Add'}} Server</div>
+	<div class="container">
 		<form [formGroup]="form" (ngSubmit)="submitForm()" class="col s12">
-			<div class="row form-group">
-				<div class="col s12">
-					<label for="name">Name</label> 
-					<input type="text" class="form-control" name="name" formControlName="name" />
+			<div class="row mb-3">
+				<label for="name" class="col-md-4 s-align s-form-lbl">Server Name *</label>
+				<div class="col-md-4">
+					<input type="text" class="form-control col-md-4" name="name" formControlName="name" />
 					<div class="alert-danger">
 						<div *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']">* Required</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<label for="hostname">Hostname</label>
+			<div class="row mb-3">
+				<label for="email" class="col-md-4 s-align s-form-lbl">Hostname</label>
+				<div class="col-md-4">
 					<input type="text" class="form-control" name="hostname" formControlName="hostname" />
 					<div class="alert-danger">
 						<div *ngIf="form.controls['hostname'].touched && form.controls['hostname'].errors?.['required']">* Required</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<label for="ip">IP</label>
+			<div class="row mb-3">
+				<label for="phone" class="col-md-4 s-align s-form-lbl">IP</label>
+				<div class="col-md-4">
 					<input type="text" class="form-control" name="ip" formControlName="ip" />
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<label for="type">Type</label>
+			<div class="row mb-3">
+				<label for="team" class="col-md-4 s-align s-form-lbl">Type</label>
+				<div class="col-md-4">
 					<input type="text" class="form-control" name="type" formControlName="type" />
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<label for="os">Operating System</label>
+			<div class="row mb-3">
+				<label for="team" class="col-md-4 s-align s-form-lbl">Operating System</label>
+				<div class="col-md-4">
 					<input type="text" class="form-control" name="os" formControlName="os" />
 				</div>
 			</div>
 			<br />
-			<div class="d-flex gap-2">
-				<a href="#" [routerLink]="id ? ['/servers/view/'+id] :  ['/servers/']" class="btn btn-secondary w-100">Cancel</a>
-				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
+			<div class="row mb-3 d-flex justify-content-center gap-2">
+				<a href="#" [routerLink]="id ? ['/servers/view/'+id] :  ['/servers/']" class="btn btn-secondary col-md-2">Cancel</a>
+				<button class="btn btn-primary col-md-2" [disabled]="form.pristine || form.invalid">{{ id ? 'Save' : 'Create'}}</button>
 			</div>
-			<!-- <div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div> -->
 		</form>
 	</div>
 </div>

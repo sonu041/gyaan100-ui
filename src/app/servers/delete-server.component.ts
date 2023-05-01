@@ -5,7 +5,7 @@ import { catchError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServersService } from './servers.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Server } from './server';
 
 @Component({
     selector: 'app-delete-server',
@@ -14,11 +14,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   })
 
 export class DeleteServerComponent implements OnInit{
-
   id: any;
   form: FormGroup;
   servers:any = [];
-  // durationInSeconds = 5;
+  server!: Server;
 
   constructor(
     public fb: FormBuilder,
@@ -44,6 +43,9 @@ export class DeleteServerComponent implements OnInit{
   ngOnInit() { 
     this.id = this.route.snapshot.paramMap.get('id');
     console.log(this.id);
+    this.serverService.find(this.id).subscribe((data: Server)=>{
+      this.server = data;
+    });
   }
   
   /** Submit the Knowledge Create Form */
