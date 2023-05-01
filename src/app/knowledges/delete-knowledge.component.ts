@@ -5,6 +5,7 @@ import { catchError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { KnowledgesService } from './knowledges.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Knowledge } from './knowledge';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class DeleteKnowledgeComponent implements OnInit{
 
   id: any;
   form: FormGroup;
-  knowledges:any = [];
+  knowledge!:Knowledge;
   // durationInSeconds = 5;
 
   constructor(
@@ -44,6 +45,9 @@ export class DeleteKnowledgeComponent implements OnInit{
   ngOnInit() { 
     this.id = this.route.snapshot.paramMap.get('id');
     console.log(this.id);
+    this.knowledgeService.find(this.id).subscribe((data: Knowledge)=>{
+      this.knowledge = data;
+  });
   }
   
   /** Submit the Knowledge Create Form */
