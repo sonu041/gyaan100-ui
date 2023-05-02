@@ -33,6 +33,10 @@ export class KnowledgesService {
 		return this.httpClient.delete(AppConstants.KNOWLEDGE_ENDPOINT + '/' + id)
 	}
 
+  searchKnowledge(searchtext:any): Observable<any> {
+		return this.httpClient.get<Knowledge>(AppConstants.KNOWLEDGE_ENDPOINT + '/search/' + searchtext)
+	}
+
   // getKnowledges$(): Observable<any> {
   //   // const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
   //   return this.httpClient.get(KnowledgesService.KNOWLEDGE_ENDPOINT,

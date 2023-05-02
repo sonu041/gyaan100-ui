@@ -22,12 +22,12 @@ export class KnowledgeViewComponent implements OnInit{
     private knowledgeService: KnowledgesService,
   ) { }
 
-    ngOnInit() { 
-        this.id = this.route.snapshot.paramMap.get('id');
-        console.log(this.id);
-        this.knowledgeService.find(this.id).subscribe((data: Knowledge)=>{
-            this.knowledge = data;
-        });
-    }
+  ngOnInit() { 
+      this.id = this.route.snapshot.paramMap.get('id');
+      console.log(this.id);
+      this.knowledgeService.find(this.id).subscribe((data: Knowledge)=>{
+          this.knowledge = data;
+      });
+  }
   
 }

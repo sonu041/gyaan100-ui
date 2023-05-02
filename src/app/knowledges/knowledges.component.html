@@ -1,6 +1,17 @@
 <h1>Knowledges</h1>
-<div justify="flex-end" >
-    <button mat-flat-button color="primary" routerLink="/knowledges/add">Add New Knowledge</button>
+<div class="row" justify="flex-end" >
+    <div class="col-md-4">
+        <button mat-flat-button color="primary" routerLink="/knowledges/add">Add New Knowledge</button>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="input-group mb-3">
+            <input type="text" name="search" id="search" [(ngModel)]="searchText" class="form-control" placeholder="Search Knowledge">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" (click)="search()">Search</button>
+            </div>
+        </div>
+    </div>
 </div>
 <br><br>
 
