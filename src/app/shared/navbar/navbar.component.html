@@ -7,7 +7,7 @@
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
-  <a href="/"> KMS-100 </a>
+  <a class="link-light text-decoration-none" href="/"> KMS-100 </a>
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -49,7 +49,7 @@
 
     <mat-divider></mat-divider>
 
-    <a href="#" [routerLink]="['/logout']">Logout</a>
+    <a class="link-danger text-decoration-none" href="#" [routerLink]="['/logout']">Logout</a>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
