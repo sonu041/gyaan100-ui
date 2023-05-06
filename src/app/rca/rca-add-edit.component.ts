@@ -31,6 +31,9 @@ export class RcaAddEditComponent implements OnInit{
     this.form = this.fb.group({
       title: ['', [ Validators.required ] ],
       details: ['', [ ] ],
+      root_cause: ['', [ ] ],
+      timeline: ['', [ ] ],
+      action_item: ['', [ ] ],
     })
   }
   ngOnInit() { 

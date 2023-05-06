@@ -7,12 +7,15 @@
     <thead>
       <tr>
         <th scope="col">Title</th>
+        <th scope="col">Date</th>
       </tr>
+      
     </thead>
     <tbody>
 
       <tr *ngFor="let rca of rcas">
         <td><a href="#" [routerLink]="['/rca/view', rca.id]" class="text-decoration-none">{{ rca.title }}</a></td>
+        <td>{{ rca.created_date }}</td>
       </tr>
     </tbody>
   </table>
