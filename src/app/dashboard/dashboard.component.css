@@ -53,3 +53,8 @@ body{
 .f-right {
     float: right;
 }
+
+.dash-small-date {
+    width: 110px;
+    text-align-last: right;
+}

@@ -15,4 +15,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .s-align {
       text-align: left;
     }
-  }
+}
+
+.b-padding-15 {
+  padding-bottom: 15px;
+
+}
